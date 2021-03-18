@@ -1,0 +1,382 @@
+/*------GLOBAL STYLES------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+li,
+button,
+label,
+input,
+p {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 2.6rem;
+}
+
+h2 {
+  font-size: 4.7rem;
+}
+
+h3 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+h4,
+h5 {
+  font-size: 2.8rem;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+button {
+  padding: 2rem 6rem;
+  background: #4c6e97;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out;
+}
+
+button:hover {
+  background: #27394e;
+}
+
+/*----------NAV SECTION WITH HERO LANDING PAGE----------*/
+
+.main-head {
+  background: #131c27;
+  color: white;
+  position: sticky;
+  top: 0px;
+  z-index: 5;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  width: 90%;
+  margin: auto;
+
+  min-height: 10vh;
+  padding: 2rem;
+
+
+}
+
+#logo {
+  flex: 2 1 40rem;
+  font-family: "Pattaya", sans-serif;
+  font-weight: 400;
+}
+
+nav ul {
+  list-style: none;
+
+  display: flex;
+  flex: 1 1 40rem;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*--------------------*/
+
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url("./img/landing-page.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h3 {
+  padding: 5rem;
+}
+
+/*----------LOCATIONS SECTION----------*/
+
+#locations {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url(./img/new-york-page.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  display: flex; /*we only applying the flex to the header as it's the only thing we have in this section*/
+  align-items: center; /*to position the header vertically to the center*/
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.locations-head {
+  /*to match up with the margin set for the other elements, eg nav*/
+  width: 90%;
+  margin: auto;
+}
+
+.locations-head h2 {
+  padding: 1rem 0rem;
+  text-decoration: underline;
+  text-decoration-thickness: 0.5rem; /*not supported by all the browsers*/
+}
+
+.locations-head h3 {
+  padding: 4rem 0rem;
+  background: linear-gradient(#131c27, #663b34);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cloud {
+  position: absolute; /*by default, it will position the element relative to the body >> to correct that, we need to add "position:relative" to its container #locations*/
+  top: 0%;
+  right: 0%;
+  pointer-events: none;
+}
+
+.moving-cloud-1 {
+  animation: cloudAnimation 3s infinite alternate ease-in-out;
+}
+
+.moving-cloud-2 {
+  top: 12%;
+  z-index: -1;
+  opacity: 0.4;
+
+  animation: cloudAnimation 3.5s infinite alternate ease-in-out;
+}
+
+@keyframes cloudAnimation {
+  from {
+    transform: translate(10%, -10%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+/*----------BENEFITS SECTION----------*/
+
+.benefits-head {
+  background: #343c44;
+  padding: 3rem;
+  min-height: 30vh;
+
+  display: flex;
+  flex-direction: column; /*to vertically aligned the h2 & h3 inside this header*/
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-align: center;
+}
+
+.benefits-head h3 {
+  padding: 1rem;
+}
+
+.cards {
+  width: 90%;
+  margin: auto;
+  display: flex;
+
+  min-height: 70vh;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 25rem;
+  min-height: 40vh;
+  margin: 2rem 5rem;
+
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1); /* decalage x axis  y axis blurr color | combining 2 box shadow to add more style to element*/
+  text-align: center; /*to align the icons*/
+}
+
+.card-icon {
+  background: #343c44;
+}
+
+.cards img {
+  max-width: 15%;
+  margin: 2rem;
+}
+.card h4,
+.card p {
+  padding: 1rem;
+}
+
+
+/*----------CONTACT SECTION----------*/
+
+#contact {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), transparent), url("./img/contact-mountain.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-head {
+    text-align: center;
+    padding: 4rem;
+}
+
+.name-form,
+.email-form {
+    text-align: center;
+    padding: 3rem;
+}
+
+.form-wrapper {
+    background: rgba(19, 28, 39, 0.9);
+    width: 60%;
+    color: white;
+    border-radius: 20px;
+}
+
+.form-wrapper label {
+    margin: 0rem 3rem; /* separate labels from inputs*/
+}
+
+.form-wrapper input {
+    padding: 1rem 3rem; /*add more space in the input section*/
+}
+
+.form-wrapper button {
+    width: 100%; /*of the form width*/
+    padding: 2rem;
+    margin-top: 8rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
+/*----------FOOTER----------*/
+
+footer {
+    color: white;
+    background: rgba(19, 28, 39, 0.9);
+
+}
+
+.footer-wrapper {
+    width: 90%;
+    margin: auto;
+    
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    min-height: 10vh;
+    padding: 2rem;
+}
+
+footer h5 {
+    flex: 1 1 40rem;
+}
+
+footer ul {
+    list-style: none;
+    
+    display: flex;
+    flex: 1 1 40rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 932px) {
+  /*for test -> body{display: none;}*/
+
+  html {
+    font-size: 45%;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  #logo {
+    padding: 1rem;
+  }
+  .cloud {
+    height: 40rem;
+  }
+  .moving-cloud-1 {
+    z-index: -1;
+  }
+
+  .moving-cloud-2 {
+    z-index: -2;
+  }
+
+  .locations-head h2 {
+    text-align: center;
+  }
+
+  .locations-head h3 {
+    background: rgba(19, 28, 39, 0.9);
+    -webkit-text-fill-color: white;
+    text-align: center;
+    padding: 4rem;
+    margin-top: 5rem;
+  }
+
+  .form-wrapper {
+      width: 100%;
+  }
+  footer {
+      text-align: center;
+  }
+
+  footer h5 {
+      padding-bottom: 3rem;
+  }
+}
